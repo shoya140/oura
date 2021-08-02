@@ -22,18 +22,23 @@ body,
   max-width: 1000px;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
+
+  p {
+    text-align: center;
+  }
 }
 
 .score {
-  font-size: 64px;
+  font-size: 48px;
 }
 
 .footer {
-  position: fixed;
-  bottom: 0;
+  position: absolute;
+  bottom: 8px;
   left: 0;
   right: 0;
   p {
     text-align: center;
+    font-size: 14px;
   }
 }
