@@ -1,7 +1,8 @@
 const ProgressBar = ({
   color = '#ff0000',
   completed = 100,
-  labelComponent,
+  labelComponent = false,
+  percentage = false,
 }) => {
   const styles = {
     container: {
@@ -13,7 +14,7 @@ const ProgressBar = ({
     label: {
       fontSize: '14px',
       width: '200px',
-      textAlign: 'right'
+      textAlign: 'right',
     },
     tail: {
       marginLeft: '8px',
@@ -36,16 +37,18 @@ const ProgressBar = ({
       right: '4px',
       color: 'white',
       fontSize: '10px',
-      fontWeight: '700'
+      fontWeight: '700',
     },
   }
 
   return (
     <div style={styles.container}>
-      <div style={styles.label}>{labelComponent}</div>
+      {labelComponent && <div style={styles.label}>{labelComponent}</div>}
       <div style={styles.tail}>
         <div style={styles.filler}>
-          <span style={styles.percentage}>{`${completed}`}</span>
+          {percentage && (
+            <span style={styles.percentage}>{`${completed}`}</span>
+          )}
         </div>
       </div>
     </div>

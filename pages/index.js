@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { fetchOuraData } from 'lib/oura'
+import { fetchReadinessData } from 'lib/oura'
 import { hsv2rgb, rgb2css } from 'lib/color'
 import ProgressBar from 'components/progress-bar'
 
@@ -50,7 +50,7 @@ export default function Home({
 }
 
 export async function getServerSideProps({ params, req }) {
-  const rawData = await fetchOuraData()
+  const rawData = await fetchReadinessData()
 
   return {
     props: {
